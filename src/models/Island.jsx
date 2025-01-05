@@ -42,9 +42,9 @@ export function Island({
       const clientX = event.touches ? event.touches[0].clientX : event.clientX;
 
       const delta = (clientX - lastX.current) / viewport.width;
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      islandRef.current.rotation.y += delta * 0.02 * Math.PI;
       lastX.current = clientX;
-      rotationSpeed.current = delta * 0.01 * Math.PI;
+      rotationSpeed.current = delta * 0.02 * Math.PI;
     }
   };
 

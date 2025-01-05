@@ -6,3 +6,4 @@ import Projects from "./Projects";
 export {
     About, Contact, Home, Projects
 };
+

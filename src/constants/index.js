@@ -7,13 +7,11 @@ import {
     html,
     javascript,
     linkedin,
-    mongodb,
     mui,
     nextjs,
     nodejs,
     pricewise,
     react,
-    snapgram,
     tailwindcss
 } from "../assets/icons";
 // import { meta, shopify, starbucks, tesla } from "../assets/images";
@@ -43,11 +41,6 @@ export const skills = [
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
-    },
-    {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
     },
     {
         imageUrl: mui,
@@ -187,22 +180,29 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: '',
+        name: 'Alumni ChatApp',
+        description: "Developed a chatapp for the alumni of colleges and universities of Odisha, to track the records of their alumni's and allowing users to connect with their friends and teachers in a familiar social media environment.",
+        link: 'https://github.com/adarshraj26/AlumniChatApp',
     },
     {
         iconUrl: car,
         theme: 'btn-back-blue',
         name: 'Car Booking Application',
         description: 'Designed and built a web app for booking cars, allowing users to browse and reserve vehicles for their desired dates and times.',
-        link: '',
+        link: 'https://car-rental-22fe5.web.app',
     },
     {
-        iconUrl: snapgram,
+        iconUrl: pricewise,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: '',
+        name: 'AI-SaaS Application',
+        description: 'Developed a web app for generating audio, video, text, and image content using AI, allowing users to create content for their social media platforms.',
+        link: 'https://ai-saa-s-azure.vercel.app/',
+    },
+    {
+        iconUrl: pricewise,
+        theme: 'btn-back-green',
+        name: 'NGO Website',
+        description: 'Developed a website for an NGO, allowing users to donate and contribute to the organization, as well as learn more about their mission and goals.',
+        link: 'ngo-website-psi.vercel.app',
     }
 ];

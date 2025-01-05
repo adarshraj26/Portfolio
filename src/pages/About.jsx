@@ -30,7 +30,7 @@ const About = () => {
       </div>
 
       <div className="mt-10 flex gap-5 text-slate-500 items-center justify-center">
-        <p className="text-xl font-semibold">Get CV here!</p>
+        <p className="text-xl font-semibold">Get Resume here!</p>
         <button className="btn py-2 px-4">
           <a href={Resume} download="Adarsh's.pdf">
             {" "}
