@@ -71,7 +71,7 @@ export default function AiPortfolioChat() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.92 }}
         onClick={() => setOpen((o) => !o)}
-        className={`fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full
+        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full
                     flex items-center justify-center shadow-xl border
                     transition-colors duration-200
                     ${open
@@ -102,7 +102,7 @@ export default function AiPortfolioChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 20 }}
             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="fixed bottom-24 right-6 z-[9989] w-[340px] sm:w-[380px]
+            className="fixed bottom-24 right-6 z-40 w-[340px] sm:w-[380px]
                        dark:bg-slate-900 bg-white rounded-2xl shadow-2xl
                        border dark:border-slate-700/60 border-slate-200
                        flex flex-col overflow-hidden"

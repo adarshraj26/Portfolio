@@ -237,7 +237,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-y-0 right-0 z-40 w-64 dark:bg-slate-900 bg-white
+            className="fixed inset-y-0 right-0 z-[99] w-64 dark:bg-slate-900 bg-white
                        dark:border-l border-slate-700/50 shadow-2xl md:hidden pt-20 px-6 flex flex-col"
           >
             <div className="flex flex-col gap-1 flex-1">
