@@ -130,7 +130,7 @@ const socials = [
 /* ── Typewriter roles ── */
 const ROLES = [
   "Full Stack Developer",
-  "AI Builder",
+  "Building Apps Using AI",
   "Open Source Contributor",
 ];
 
