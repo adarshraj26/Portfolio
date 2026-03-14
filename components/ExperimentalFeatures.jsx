@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import AnimatedBackgroundToggle from "./AnimatedBackgroundToggle";
 import BugCatcherGame from "./BugCatcherGame";
 import { useDevMode } from "./DevModeContext";
 import VsCodeThemeSwitcher from "./VsCodeThemeSwitcher";
@@ -13,7 +12,6 @@ export default function ExperimentalFeatures() {
   return (
     <>
       <VsCodeThemeSwitcher />
-      <AnimatedBackgroundToggle />
       {/* Bug Game Launcher Button */}
       <button
         onClick={() => setShowBugGame(true)}
