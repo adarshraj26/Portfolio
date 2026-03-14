@@ -1,0 +1,310 @@
+/* ─────────────────────────────────────────────
+   Minimalist Colored Stat/Info Boxes
+────────────────────────────────────────────── */
+@layer components {
+  .info-box-cyan {
+    @apply bg-cyan-50 border border-cyan-100 rounded-2xl;
+  }
+  .info-box-purple {
+    @apply bg-purple-50 border border-purple-100 rounded-2xl;
+  }
+  .info-box-emerald {
+    @apply bg-emerald-50 border border-emerald-100 rounded-2xl;
+  }
+  .info-box-orange {
+    @apply bg-orange-50 border border-orange-100 rounded-2xl;
+  }
+  .info-box-pink {
+    @apply bg-pink-50 border border-pink-100 rounded-2xl;
+  }
+  .info-box-blue {
+    @apply bg-blue-50 border border-blue-100 rounded-2xl;
+  }
+  .info-box-yellow {
+    @apply bg-yellow-50 border border-yellow-100 rounded-2xl;
+  }
+  .info-box-gray {
+    @apply bg-slate-50 border border-slate-100 rounded-2xl;
+  }
+  .dark .info-box-cyan,
+  .dark .info-box-purple,
+  .dark .info-box-emerald,
+  .dark .info-box-orange,
+  .dark .info-box-pink,
+  .dark .info-box-blue,
+  .dark .info-box-yellow,
+  .dark .info-box-gray {
+    @apply bg-slate-800/60 border-slate-700/50;
+  }
+}
+/* ─────────────────────────────────────────────
+   Colorful Section Boxes (Light Theme)
+────────────────────────────────────────────── */
+@layer components {
+  .section-box {
+    @apply rounded-2xl shadow-lg p-6 sm:p-10 mb-10;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+  }
+  .section-box-blue {
+    @apply rounded-2xl shadow-lg p-6 sm:p-10 mb-10;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  }
+  .section-box-pink {
+    @apply rounded-2xl shadow-lg p-6 sm:p-10 mb-10;
+    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
+  }
+  .section-box-green {
+    @apply rounded-2xl shadow-lg p-6 sm:p-10 mb-10;
+    background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+  }
+  .dark .section-box,
+  .dark .section-box-blue,
+  .dark .section-box-pink,
+  .dark .section-box-green {
+    background: #181f2a;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────
+   Base Reset & Smooth Scroll
+───────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply box-border m-0 p-0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+
+  /* Dark mode body */
+  .dark body {
+    @apply bg-dark-bg text-slate-100;
+  }
+
+  /* Light mode body */
+  body {
+    @apply text-slate-900;
+    background: linear-gradient(135deg, #f3e8ff 0%, #ffe4fa 100%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyan-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-400;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Utility & Reusable Styles
+───────────────────────────────────────────── */
+@layer components {
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Glowing border card */
+  .card-glow {
+    @apply relative rounded-xl border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm
+           transition-all duration-300 hover:border-cyan-500/40 hover:shadow-card-hover;
+  }
+
+  .dark .card-glow {
+    @apply border-slate-700/50 bg-slate-800/50;
+  }
+
+  .card-glow-light {
+    @apply relative rounded-xl border border-slate-200 bg-white shadow-sm
+           transition-all duration-300 hover:border-cyan-500/40 hover:shadow-lg;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm
+           bg-gradient-to-r from-cyan-500 to-blue-600
+           text-white shadow-glow-cyan
+           transition-all duration-300
+           hover:scale-105 hover:shadow-glow-cyan hover:from-cyan-400 hover:to-blue-500
+           active:scale-95;
+  }
+
+  /* Button outline */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm
+           border border-cyan-500/60 text-cyan-400
+           transition-all duration-300
+           hover:bg-cyan-500/10 hover:border-cyan-400 hover:scale-105
+           active:scale-95;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold mb-2;
+  }
+
+  /* Skill badge */
+  .skill-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
+           border border-slate-700/60 bg-slate-800/60 text-slate-300
+           transition-all duration-200
+           hover:border-cyan-500/60 hover:text-cyan-400 hover:bg-cyan-500/5
+           cursor-default;
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Animated Gradient Background
+───────────────────────────────────────────── */
+.hero-bg-gradient {
+  background: radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 60% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+              #0f172a;
+}
+
+/* ─────────────────────────────────────────────
+   Grid Pattern Background
+───────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─────────────────────────────────────────────
+   Focus outline accessible style
+───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   Transition for theme switching
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-timing-function: ease;
+  transition-duration: 200ms;
+}
+
+/* ─────────────────────────────────────────────
+   VS Code Themes
+   Applied via data-vscode-theme on <html>
+───────────────────────────────────────────── */
+html[data-vscode-theme="dracula"] {
+  --vsc-bg:         #282a36;
+  --vsc-surface:    rgba(40, 42, 54, 0.85);
+  --vsc-card:       rgba(68, 71, 90, 0.65);
+  --vsc-card-solid: #44475a;
+  --vsc-border:     rgba(98, 114, 164, 0.45);
+}
+html[data-vscode-theme="nord"] {
+  --vsc-bg:         #2e3440;
+  --vsc-surface:    rgba(46, 52, 64, 0.85);
+  --vsc-card:       rgba(59, 66, 82, 0.65);
+  --vsc-card-solid: #3b4252;
+  --vsc-border:     rgba(76, 86, 106, 0.45);
+}
+html[data-vscode-theme="monokai"] {
+  --vsc-bg:         #272822;
+  --vsc-surface:    rgba(39, 40, 34, 0.85);
+  --vsc-card:       rgba(62, 61, 50, 0.65);
+  --vsc-card-solid: #3e3d32;
+  --vsc-border:     rgba(117, 113, 94, 0.45);
+}
+html[data-vscode-theme="one-dark"] {
+  --vsc-bg:         #282c34;
+  --vsc-surface:    rgba(40, 44, 52, 0.85);
+  --vsc-card:       rgba(44, 49, 58, 0.65);
+  --vsc-card-solid: #2c313a;
+  --vsc-border:     rgba(62, 68, 81, 0.45);
+}
+
+/* ── Page & section backgrounds ── */
+html[data-vscode-theme].dark body,
+html[data-vscode-theme].dark main {
+  background-color: var(--vsc-bg) !important;
+}
+html[data-vscode-theme].dark #hero {
+  background: var(--vsc-bg) !important;
+}
+html[data-vscode-theme].dark .dark\:bg-transparent {
+  background-color: transparent !important;
+}
+html[data-vscode-theme].dark .dark\:bg-slate-900\/50 {
+  background-color: var(--vsc-surface) !important;
+}
+
+/* ── Navbar ── */
+html[data-vscode-theme].dark .dark\:bg-slate-900\/80,
+html[data-vscode-theme].dark .dark\:bg-slate-900\/85 {
+  background-color: var(--vsc-surface) !important;
+}
+html[data-vscode-theme].dark .dark\:bg-slate-900 {
+  background-color: var(--vsc-bg) !important;
+}
+
+/* ── Cards ── */
+html[data-vscode-theme].dark .dark\:bg-slate-800\/60,
+html[data-vscode-theme].dark .dark\:bg-slate-800\/70,
+html[data-vscode-theme].dark .dark\:bg-slate-800\/80,
+html[data-vscode-theme].dark .dark\:bg-slate-800\/90 {
+  background-color: var(--vsc-card) !important;
+}
+html[data-vscode-theme].dark .dark\:bg-slate-800 {
+  background-color: var(--vsc-card-solid) !important;
+}
+html[data-vscode-theme].dark .dark\:bg-slate-700\/90,
+html[data-vscode-theme].dark .dark\:bg-slate-700 {
+  background-color: color-mix(in srgb, var(--vsc-card-solid) 80%, white 20%) !important;
+}
+
+/* ── Borders ── */
+html[data-vscode-theme].dark .dark\:border-slate-700\/50,
+html[data-vscode-theme].dark .dark\:border-slate-700\/60,
+html[data-vscode-theme].dark .dark\:border-slate-700 {
+  border-color: var(--vsc-border) !important;
+}
