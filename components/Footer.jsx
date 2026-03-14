@@ -124,12 +124,7 @@ export default function Footer() {
           </p>
           <VisitorCounter />
           <p className="text-sm dark:text-slate-500 text-slate-400 flex items-center gap-1.5">
-            Built with{" "}
-            <FiHeart className="w-3.5 h-3.5 text-red-400" />
-            {" "}using{" "}
-            <span className="text-cyan-400 font-medium">React</span>
-            {" "}&{" "}
-            <span className="text-cyan-400 font-medium">Tailwind CSS</span>
+            Built with <FiHeart className="w-3.5 h-3.5 text-red-400" />
           </p>
         </div>
       </div>

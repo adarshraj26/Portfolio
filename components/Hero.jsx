@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { FiArrowDown, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { HiDownload } from "react-icons/hi";
-import { useEffect, useRef, useState } from "react";
 
 /* ── Particle canvas background ── */
 function ParticleCanvas() {
