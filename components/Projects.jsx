@@ -11,13 +11,19 @@ import {
   SiFlutter,
   SiGmail,
   SiGoogle,
+  SiHuggingface,
   SiHtml5,
   SiJavascript,
   SiMongodb,
   SiNextdotjs,
-  SiNodedotjs, SiOpenai, SiPrisma,
+  SiNodedotjs,
+  SiOpenai,
+  SiPrisma,
+  SiPytorch,
   SiPython,
   SiReact,
+  SiScikitlearn,
+  SiStreamlit,
   SiTailwindcss,
   SiTypescript
 } from "react-icons/si";
@@ -43,6 +49,10 @@ const techMeta = {
   "Dart":           { icon: SiDart,              color: "#0175C2" },
   "Firebase":       { icon: SiFirebase,          color: "#FFCA28" },
   "Python":         { icon: SiPython,            color: "#3776AB" },
+  "Streamlit":      { icon: SiStreamlit,         color: "#FF4B4B" },
+  "Scikit-learn":   { icon: SiScikitlearn,       color: "#F7931E" },
+  "PyTorch":        { icon: SiPytorch,           color: "#EE4C2C" },
+  "Hugging Face":   { icon: SiHuggingface,       color: "#FFD21E" },
   "HTML":           { icon: SiHtml5,             color: "#E34F26" },
   "CSS":            { icon: SiCss,              color: "#1572B6" },
   "JavaScript":     { icon: SiJavascript,        color: "#F7DF1E" },
@@ -52,6 +62,24 @@ const techMeta = {
 
 /* ── Projects data ── */
 const projects = [
+  {
+    title: "Multilingual Complaint Auto-Routing System",
+    description:
+      "A local-first, offline AI/ML platform that automates municipal complaint classification, resolution ETA forecasting, and multi-factor smart officer routing.",
+    tech: ["Python", "Streamlit", "Scikit-learn", "Hugging Face"],
+    features: [
+      "Offline multimodal ingestion (audio Whisper ASR, OpenCV video keyframes, multilingual text)",
+      "Cross-lingual semantic matching via 384-d sentence transformer embeddings",
+      "Dual-task ML pipeline predicting priority (93.3% accuracy) and resolution ETA (MAE ~2.25 days)",
+      "Multi-factor routing engine scoring on semantic similarity, regional zone, language, and workload",
+    ],
+    category: "ML / AI",
+    categoryColor: "bg-red-500/15 text-red-400 border-red-500/30",
+    gradient: "from-red-500 to-rose-600",
+    featured: true,
+    github: "https://github.com/adarshraj26/complaint-auto-routing-system.git",
+    demo: "https://complaint-auto-routing-system.streamlit.app/",
+  },
   {
     title: "SensAI – AI Career Coach",
     description:
@@ -472,6 +500,7 @@ const FILTER_MAP = {
   "Cloud":       "Cloud",
   "Mobile App":  "Mobile",
   "Web":         "Web",
+  "Web App":     "Web",
 };
 const FILTERS = ["All", "AI", "Full Stack", "Cloud", "Mobile", "Web"];
 
@@ -500,8 +529,8 @@ export default function Projects() {
           </div>
           <div className="space-y-2">
             {[
-              { label: "Total Projects", val: "9+" },
-              { label: "AI / ML Tools", val: "4" },
+              { label: "Total Projects", val: "12" },
+              { label: "AI / ML Tools", val: "5" },
               { label: "Full Stack Apps", val: "6" },
               { label: "Open Source", val: "100%" },
             ].map(({ label, val }) => (
@@ -529,8 +558,8 @@ export default function Projects() {
         className="flex flex-wrap justify-center gap-6 mb-12"
       >
         {[
-          { label: "Total Projects", value: "9+" },
-          { label: "AI / ML Projects", value: "4" },
+          { label: "Total Projects", value: "12" },
+          { label: "AI / ML Projects", value: "5" },
           { label: "Full Stack Apps", value: "6" },
           { label: "Cloud Integrated", value: "3" },
         ].map(({ label, value }) => (

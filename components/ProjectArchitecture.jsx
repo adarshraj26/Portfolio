@@ -9,6 +9,82 @@ import SectionWrapper from "./SectionWrapper";
 /* ── Architecture data for each featured project ── */
 const ARCH_PROJECTS = [
   {
+    id:       "complaint-routing",
+    title:    "Complaint Routing System",
+    category: "AI/ML Routing",
+    gradient: "from-red-500 to-rose-600",
+    rows: [
+      [
+        {
+          id:       "ingestion",
+          label:    "Multimodal Ingestion",
+          sublabel: "Citizen Inputs",
+          icon:     "📝",
+          gradient: "from-slate-500 to-slate-600",
+          detail:   "Ingests citizen complaints via multilingual text, recorded audio statements, or uploaded video files of local infrastructure issues.",
+        },
+      ],
+      [
+        {
+          id:       "media-processing",
+          label:    "Media Processing",
+          sublabel: "ASR & Keyframes",
+          icon:     "⚙️",
+          gradient: "from-amber-500 to-orange-500",
+          detail:   "Processes media assets locally: transcribes speech with Whisper-Tiny, extracts acoustic features using Librosa, and captures video keyframes with OpenCV.",
+        },
+      ],
+      [
+        {
+          id:       "embeddings",
+          label:    "Sentence Transformers",
+          sublabel: "Semantic Vector",
+          icon:     "🤖",
+          gradient: "from-violet-500 to-purple-600",
+          detail:   "Maps multilingual texts into a shared 384-dimensional vector space using paraphrase-multilingual-MiniLM-L12-v2, aligning different languages semantically.",
+        },
+      ],
+      [
+        {
+          id:       "ml-models",
+          label:    "Predictive ML Models",
+          sublabel: "Priority & ETA",
+          icon:     "🧠",
+          gradient: "from-red-500 to-rose-500",
+          detail:   "Scikit-learn Logistic Regression classifies severity (93.3% accuracy), and a Random Forest Regressor estimates resolution ETA (Mean Absolute Error of ~2.25 days).",
+        },
+        {
+          id:       "faiss-index",
+          label:    "FAISS Semantic Index",
+          sublabel: "Similarity Search",
+          icon:     "🔍",
+          gradient: "from-cyan-500 to-blue-500",
+          detail:   "Runs sub-millisecond inner-product vector search using Meta's FAISS to find the top-5 most similar historical complaints for context.",
+        },
+      ],
+      [
+        {
+          id:       "routing-engine",
+          label:    "Smart Routing Engine",
+          sublabel: "Smart Assignment",
+          icon:     "🎯",
+          gradient: "from-pink-500 to-rose-600",
+          detail:   "Routes complaints using a composite score of semantic cosine similarity, zone preference, language compatibility, and active officer workload.",
+        },
+      ],
+      [
+        {
+          id:       "streamlit-ui",
+          label:    "Streamlit Dashboard",
+          sublabel: "Command Center",
+          icon:     "📊",
+          gradient: "from-emerald-500 to-teal-600",
+          detail:   "Provides municipal officers with an interactive command center to review complaints, play audio, view keyframes, inspect predictions, and manage assignments.",
+        },
+      ],
+    ],
+  },
+  {
     id:       "sensai",
     title:    "SensAI",
     category: "AI Career Coach",
